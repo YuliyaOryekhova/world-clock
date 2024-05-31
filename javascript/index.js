@@ -24,6 +24,18 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let SakhalinElement = document.querySelector("#sakhalin");
+  if (SakhalinElement) {
+    let SakhalinDateElement = SakhalinElement.querySelector(".date");
+    let SakhalinTimeElement = SakhalinElement.querySelector(".time");
+    let SakhalinTime = moment().tz("Asia/Sakhalin");
+
+    SakhalinDateElement.innerHTML = moment().format("MMMM Do YYYY");
+
+    SakhalinTimeElement.innerHTML = SakhalinTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
